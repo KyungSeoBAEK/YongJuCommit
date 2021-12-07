@@ -1,15 +1,12 @@
-<%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="com.Product.DTO.*"%>
-<%@ page import="com.Product.DAO.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/Cart.css">
-<%
-String cartId = session.getId();
-%>
-<title>장바구니</title>
+<meta charset="UTF-8">
+<title>내정보_장바구니</title>
 <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -21,15 +18,38 @@ String cartId = session.getId();
 </head>
 <body>
 	<%@ include file="../include/header.jsp"%>
-
 	<center>
-		<div style="width: 100%; padding: 0px 25px; height: auto;">
-			<div style="width: 90%; height: auto;">
+
+		<div style="width: 100%; padding: 0px 25px; height: auto; background-color: #f3f3f3;">
+			<div
+			style="width: 25%; height: auto; padding: 50px 0px 0px 100px; float: left;"
+			class="inside-header">
+			<%@ include file="../include/inside_header.jsp"%>
+		</div>
+			<div
+				style="padding:30px 0px 50px 0px; width: 70%; height: 185px; margin: 0px 0px 70px; padding: 50px 0px 50px 45px; background-color: #f3f3f3; border-bottom: 0.5px solid #00000010;">
+				<div
+					style=" width: 50%; height: 85px; margin: 0px 0px 0px 24px; color: #212121; float: left;">
+					<div
+						style="width: 85px; height: 85px; float: left; margin-right: 25px;">
+						<img style="width: 85px; height: 85px;"
+							src="${pageContext.request.contextPath}/resources/img/default_profile.png">
+					</div>
+
+					<span
+						style="width: 50%; height: 25px; font-size: 22px;">ID값으로Name/님
+						안녕하세요</span>
+					<div
+						style="width: 60%; height: 24px; color: #212121; font-size: 15px; float: left; text-align: left;">
+						누적 구매금액: KRW (sum)</div>
+				</div>
+
+			</div>
+			<div style="width: 80%; height: auto;">
 				<h1 align="left"
 					style="width: 90%; font-size: 24px; margin: 40px 0px 15px; padding-left: 70px;">
 					장바구니<span>카운트값</span>
 				</h1>
-
 				<div style="width: 90%; height: auto;">
 
 					<!-- 장바구니 테이블 시작 -->
@@ -148,7 +168,8 @@ String cartId = session.getId();
 						<tbody>
 							<!-- 실제 c:for 반복문을 사용하여 리스트를 뽑아올 위치 장바구니 목록표 -->
 							<tr class="bottomline">
-								<td class="main1" colspan="8" style="padding: 50px; text-align: center;">장바구니가 없습니다</td>
+								<td class="main1" colspan="8"
+									style="padding: 50px; text-align: center;">장바구니가 없습니다</td>
 
 							</tr>
 
@@ -170,6 +191,6 @@ String cartId = session.getId();
 	</center>
 </body>
 <footer>
-	<%@include file="../include/footer.jsp"%>
+	<%@ include file="../include/footer.jsp"%>
 </footer>
 </html>

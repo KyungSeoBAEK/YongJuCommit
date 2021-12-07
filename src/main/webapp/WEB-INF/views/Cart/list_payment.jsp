@@ -33,13 +33,12 @@ String cartId = session.getId();
 
 	});
 
-	$(".pop-open").click(function() {
-		$("#pop").show();
-		$("#Mask").show();
-	});
-	$("#pop .close").click(function() {
-		$("#pop").hide();
-		$("#Mask").hide();
+	$(document).ready(function() {
+		$('.check_all').click(function() {
+			$('.check').prop('checked', this.checked);
+
+		});
+
 	});
 </script>
 </head>
@@ -211,22 +210,22 @@ String cartId = session.getId();
 							style="margin-top: 16px; margin-bottom: 0px; text-align: left;">
 							<div style="width: 277px; margin-bottom: 10px;">
 								<label style="margin-bottom: 12px;"> <input
-									style="margin: -9px 0px 0px;" type="checkbox" id="agree">
-									<span>전체 동의</span>
+									style="margin: -9px 0px 0px;" type="checkbox" id="agree"
+									class="check_all"> <span>전체 동의</span>
 								</label>
 							</div>
 							<div
 								style="width: 277px; margin: -5px 0px 10px; padding: 0px 0px 0px 30px;">
 								<label style="margin-bottom: 12px;">┗&nbsp;<input
-									style="margin: -9px 0px 0px;" type="checkbox" id="agree">
-									<span>개인정보 수집 및 이용 동의 약관보기</span>
+									style="margin: -9px 0px 0px;" type="checkbox" id="agree"
+									class="check"> <span>개인정보 수집 및 이용 동의 약관보기</span>
 								</label>
 							</div>
 							<div
 								style="width: 277px; margin: -5px 0px 10px; padding: 0px 0px 0px 30px;">
 								<label style="margin-bottom: 12px;">┗&nbsp;<input
-									style="margin: -9px 0px 0px;" type="checkbox" id="agree">
-									<span>구매조건 확인 및 결제진행에 동의</span>
+									style="margin: -9px 0px 0px;" type="checkbox" id="agree"
+									class="check"> <span>구매조건 확인 및 결제진행에 동의</span>
 								</label>
 							</div>
 
@@ -245,4 +244,7 @@ String cartId = session.getId();
 
 
 </body>
+<footer>
+	<%@include file="../include/footer.jsp"%>
+</footer>
 </html>

@@ -1,35 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내 주문목록</title>
-<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<title>내정보_주문목록</title>
 <script type="text/javascript">
-	$(document).ready(function() {
-		$('.nosession').hide();
-		$('.session').show();
+$(document).ready(function() {
+	$('.nosession').hide();
+	$('.session').show();
 
-	});
+});
 </script>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/Cart.css">
-<%
-String cartId = session.getId();
-%>
 </head>
 <body>
-	<%@ include file="../include/header.jsp"%>
+<%@ include file="../include/header.jsp"%>
 
-	<div align="center"
-		style="width: 100%; background-color: #f3f3f3; height: 100%; padding-top: 100px;">
+
+<div align="center"
+		style="width: 100%; background-color: #f3f3f3; height: 100%; padding-top: 100px;">	
 		<div align="center"
 			style="width: 66.7%; height: auto; background-color: #f3f3f3; padding: 0px 25px;">
-			<div
-				style="width: 20%; height: auto; padding: 0px 15px; float: left;">
-				<h1>내 주문목록</h1>
+			<div style="float: left; width: 20%;">
+			<%@ include file="../include/inside_header.jsp" %>	
 			</div>
+			
 			<div
 				style="width: 80%; height: auto; padding: 0px 15px; float: left;">
 				<div
@@ -111,10 +106,8 @@ String cartId = session.getId();
 
 	</div>
 
-
-
 </body>
 <footer>
-	<%@include file="../include/footer.jsp"%>
+<%@ include file="../include/footer.jsp" %>
 </footer>
 </html>
